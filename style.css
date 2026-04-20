@@ -1,0 +1,404 @@
+/* Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: #f4f7f6;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* NAVBAR */
+.navbar {
+    background: #0d6efd;
+    padding: 15px 5%;
+    display: flex;
+    flex-direction: column; 
+    align-items: center;
+    color: white;
+    gap: 10px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    font-size: 26px;
+    font-weight: bold;
+}
+
+.logo span {
+    color: #20c997;
+}
+
+.navbar nav {
+    display: flex;
+    gap: 15px;
+    overflow-x: auto; 
+    width: 100%;
+    justify-content: center;
+    padding-bottom: 5px;
+    scrollbar-width: none;
+}
+
+.navbar nav::-webkit-scrollbar {
+    display: none;
+}
+
+.navbar nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 500;
+    white-space: nowrap;
+}
+
+/* HERO SECTION */
+.hero {
+    background: linear-gradient(135deg, #0d6efd 0%, #20c997 100%);
+    padding: 80px 5% 120px 5%;
+    color: white;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: clamp(24px, 6vw, 42px);
+    margin-bottom: 15px;
+}
+
+/* SEARCH BOX - পিসিতে বাটন ডানে থাকবে */
+.search-box {
+    margin-top: -45px;
+    display: flex;
+    justify-content: center;
+    padding: 0 5%;
+}
+
+.search-input-group {
+    display: flex;
+    flex-direction: column; 
+    width: 100%;
+    max-width: 850px;
+    gap: 10px;
+}
+
+@media (min-width: 768px) {
+    .navbar { flex-direction: row; justify-content: space-between; }
+    .navbar nav { width: auto; }
+
+    .search-input-group {
+        flex-direction: row; 
+        background: white;
+        padding: 5px;
+        border-radius: 50px;
+        box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        gap: 0;
+        align-items: center;
+    }
+
+    .filter-btn {
+        width: auto !important;
+        border-radius: 50px 0 0 50px !important;
+        padding: 0 25px !important;
+        height: 55px;
+        background: #f8f9fa;
+        border: none;
+        cursor: pointer;
+        font-weight: bold;
+    }
+
+    .search-autocomplete { flex: 1; }
+
+    #mainSearch {
+        width: 100%;
+        border: none !important;
+        padding: 0 20px;
+        height: 55px;
+        outline: none;
+    }
+
+    #searchBtn {
+        width: auto !important;
+        border-radius: 50px !important;
+        padding: 0 35px !important;
+        height: 50px;
+        margin-right: 5px;
+        background: #0d6efd;
+        color: white;
+        border: none;
+    }
+}
+
+/* PRESCRIPTION READER - সব কিছু মাঝখানে থাকবে */
+.prescription {
+    text-align: center; /* সব এলিমেন্ট মাঝখানে আনবে */
+    padding: 60px 5%;
+    background: white;
+    margin: 40px 5%;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* বাটনগুলো মাঝখানে রাখার জন্য */
+    gap: 15px;
+}
+
+.prescription form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+#fileInput {
+    margin: 10px 0;
+    max-width: 300px;
+}
+
+/* বাটনগুলোর স্টাইল */
+.prescription button, .btn-upload {
+    padding: 12px 25px;
+    background: #0d6efd;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    margin: 5px 0;
+}
+
+.camera-area {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.output-box {
+    background: #f8f9fa;
+    padding: 25px;
+    margin-top: 20px;
+    border-radius: 10px;
+    width: 100%;
+    max-width: 600px;
+    text-align: center;
+}
+
+/* FEATURES CARD */
+.features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+    padding: 60px 5%;
+}
+
+.feature-card {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+}
+
+/* FOOTER */
+footer {
+    background: #0d6efd;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 50px;
+}
+
+.hidden { display: none !important; }
+
+
+/* MEDICINE PAGE STYLES */
+.medicine-page {
+    padding: 40px 5%;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.med-header {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    margin-bottom: 25px;
+    border-left: 5px solid #0d6efd;
+}
+
+.med-header h1 { color: #0d6efd; font-size: 28px; }
+.med-header #summary { color: #666; font-weight: 500; }
+
+.price-card {
+    margin-top: 15px;
+    display: inline-block;
+    padding: 10px 20px;
+    background: #eef5ff;
+    border-radius: 8px;
+}
+
+.price-item { font-size: 22px; font-weight: bold; color: #0d6efd; }
+.price-meta { font-size: 12px; color: #666; margin-left: 10px; }
+
+.med-content-container {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 25px;
+}
+
+.med-section {
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    margin-bottom: 20px;
+}
+
+.med-section h3 {
+    margin-bottom: 10px;
+    font-size: 18px;
+    color: #333;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 5px;
+}
+
+.highlight-green {
+    border-top: 4px solid #20c997;
+}
+
+.med-sidebar ul {
+    list-style: none;
+    padding-top: 10px;
+}
+
+.med-sidebar ul li {
+    padding: 5px 0;
+    color: #0d6efd;
+    font-weight: 500;
+}
+
+/* Responsive for Mobile */
+@media (max-width: 768px) {
+    .med-content-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .med-header {
+        text-align: center;
+        border-left: none;
+        border-top: 5px solid #0d6efd;
+    }
+}
+
+/* ===== AI PRESCRIPTION READER STYLES ===== */
+.rx-drop-zone {
+    width: 100%;
+    max-width: 500px;
+    min-height: 220px;
+    border: 3px dashed #c5d5e8;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background: linear-gradient(135deg, #f8fbff 0%, #eef3fa 100%);
+    padding: 25px;
+}
+
+.rx-drop-zone:hover {
+    border-color: #0d6efd;
+    background: linear-gradient(135deg, #eef5ff 0%, #e0ecff 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(13, 110, 253, 0.12);
+}
+
+.rx-drop-zone.drag-over {
+    border-color: #20c997;
+    background: linear-gradient(135deg, #e8fff6 0%, #d4f5e9 100%);
+    transform: scale(1.02);
+    box-shadow: 0 10px 30px rgba(32, 201, 151, 0.2);
+}
+
+.rx-spinner {
+    width: 44px;
+    height: 44px;
+    border: 4px solid #e0e0e0;
+    border-top: 4px solid #0d6efd;
+    border-radius: 50%;
+    animation: rxSpin 0.8s linear infinite;
+    margin: 0 auto;
+}
+
+@keyframes rxSpin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.rx-progress-bar {
+    width: 100%;
+    max-width: 300px;
+    height: 6px;
+    background: #e0e0e0;
+    border-radius: 3px;
+    margin: 12px auto 0;
+    overflow: hidden;
+}
+
+.rx-progress-fill {
+    height: 100%;
+    width: 0%;
+    background: linear-gradient(90deg, #0d6efd, #20c997);
+    border-radius: 3px;
+    transition: width 0.3s ease;
+    animation: rxProgress 2.5s ease-in-out infinite;
+}
+
+@keyframes rxProgress {
+    0% { width: 0%; }
+    50% { width: 70%; }
+    100% { width: 95%; }
+}
+
+#rxResults .output-box,
+#rxError .output-box {
+    max-width: 100%;
+}
+
+#rxResultContent {
+    background: white;
+    padding: 15px;
+    border-radius: 8px;
+    border: 1px solid #eee;
+}
+
+#analyzeBtn:not(:disabled) {
+    opacity: 1 !important;
+    cursor: pointer !important;
+    animation: rxPulse 2s ease-in-out infinite;
+}
+
+@keyframes rxPulse {
+    0%, 100% { box-shadow: 0 0 0 0 rgba(13, 110, 253, 0.4); }
+    50% { box-shadow: 0 0 0 10px rgba(13, 110, 253, 0); }
+}
+
+/* Language Toggle Buttons */
+.rx-lang-btn {
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+    font-weight: 600;
+}
+
+.rx-lang-btn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+}
